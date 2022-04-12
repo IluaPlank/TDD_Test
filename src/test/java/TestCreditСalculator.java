@@ -4,20 +4,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestCreditСalculator {
     @Test
     public void TestMonthlyPayment(){
-        CreditСalculator сalculator = new CreditСalculator();
+        CreditCalculator calculator = new CreditCalculator();
         int month = 12;
         int sumCredit = 100000;
-        int percentYear = 10;
-        assertEquals(9166,сalculator.monthlyPayment(sumCredit,month,percentYear));
+        assertEquals(9166,calculator.monthlyPayment(sumCredit,month));
 
     }
 
     @Test
     public void SumOverpayment(){
-        CreditСalculator сalculator = new CreditСalculator();
+        CreditCalculator calculator = new CreditCalculator();
         int month = 12;
         int sumCredit = 100000;
-        int percentYear = 10;
-        assertEquals(9996,сalculator.overpayment(sumCredit,month,percentYear));
+        assertEquals(9996,calculator.overpayment(sumCredit,month));
     }
 }
