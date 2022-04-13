@@ -4,13 +4,13 @@ public class CreditCalculator {
     private static final int monthYear = 12;
     private static final int percentYear = 10;
     private static int month;
-    private static int sumCredit;
-    private static long monthOverpayment;
+    private static double sumCredit;
+    private static double monthOverpayment;
 
     public static void main(String [] args) {
         try (Scanner scanner = new Scanner(System.in)){
             System.out.println("Введите сумму кредита:");
-            sumCredit = scanner.nextInt();
+            sumCredit = scanner.nextDouble();
             System.out.println("Введите срок в месяцах :");
             month = scanner.nextInt();
             System.out.println("Переплата составит:");
@@ -20,12 +20,12 @@ public class CreditCalculator {
         }
 
     }
-    public static int overpayment(int sumCredit, int month) {
+    public static double overpayment(double sumCredit, int month) {
         monthOverpayment = (sumCredit / 100 * percentYear / monthYear);
-        return (int)(monthOverpayment * month);
+        return (monthOverpayment * month);
     }
 
-    public static int monthlyPayment(int sumCredit, int month) {
-        return (overpayment(sumCredit,month) + sumCredit)/month;
+    public static int monthlyPayment(double sumCredit, int month) {
+        return (int)(overpayment(sumCredit,month) + sumCredit)/month;
     }
 }

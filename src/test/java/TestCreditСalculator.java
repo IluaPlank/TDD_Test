@@ -6,7 +6,7 @@ public class TestCreditСalculator {
     public void TestMonthlyPayment(){
         CreditCalculator calculator = new CreditCalculator();
         int month = 12;
-        int sumCredit = 100000;
+        double sumCredit = 100000;
         assertEquals(9166,calculator.monthlyPayment(sumCredit,month));
 
     }
@@ -15,7 +15,7 @@ public class TestCreditСalculator {
     public void SumOverpayment(){
         CreditCalculator calculator = new CreditCalculator();
         int month = 12;
-        int sumCredit = 100000;
-        assertEquals(9996,calculator.overpayment(sumCredit,month));
+        double sumCredit = 100000;
+        assertEquals(10000,calculator.overpayment(sumCredit,month));
     }
 }
